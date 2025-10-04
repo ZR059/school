@@ -29,7 +29,7 @@ public class StudentController {
 
     @PostMapping
     public Student createStudent(@RequestBody Student student) {
-        return studentService.addStudent(student);
+        return studentService.createStudent(student);
     }
 
     @PutMapping
@@ -50,7 +50,7 @@ public class StudentController {
     @GetMapping
     public ResponseEntity<Collection<Student>> findStudents(@RequestParam(required = false) int age) {
         if (age > 0) {
-            return ResponseEntity.ok(studentService.findByAge(age));
+            return ResponseEntity.ok(studentService.getStudentByAge(age));
         }
         return ResponseEntity.ok(Collections.emptyList());
     }
