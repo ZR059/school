@@ -6,10 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.hogwarts.school.model.Faculty;
 import ru.hogwarts.school.service.FacultyService;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Objects;
+import java.util.*;
 
 
 @RestController
@@ -32,7 +29,7 @@ public class FacultyController {
 
     @PostMapping
     public Faculty createFaculty(@RequestBody Faculty faculty) {
-        return facultyService.addFaculty(faculty);
+        return facultyService.createFaculty(faculty);
     }
 
     @PutMapping
@@ -50,12 +47,9 @@ public class FacultyController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping
-    public ResponseEntity<Collection<Faculty>> findFaculties(@RequestParam(required = false) String color) {
-        if (color != null && !color.isBlank()) {
-            return ResponseEntity.ok(facultyService.findByColor(color));
-        }
-        // Возвращаем все факультеты, если цвет не указан
-        return ResponseEntity.ok(facultyService.getAllFaculties());
+    @GetMapping("/color/{color}")
+    public ResponseEntity<List<Faculty>> getFacultiesByColor(@PathVariable String color) {
+        List<Faculty> faculties = facultyService.getFacultiesByColor(color);
+        return ResponseEntity.ok(faculties);
     }
 }
