@@ -21,7 +21,7 @@ public class StudentService {
         return studentRepository.save(student);
     }
 
-    public Student findStudent(long id) {
+    public Student findStudent(Long id) {
         return studentRepository.findById(id).get();
     }
 
@@ -29,15 +29,18 @@ public class StudentService {
         return studentRepository.save(student);
     }
 
-    public void deleteStudent(long id) {
+    public void deleteStudent(Long id) {
         studentRepository.deleteById(id);
     }
 
-    public List<Student> getStudentByAge(int age){
+    public List<Student> getStudentsByAge(Integer age) {
+        if (age == null) {
+            return studentRepository.findAll();
+        }
         return studentRepository.findByAge(age);
     }
 
-    public List<Student> getAllStudents(Student student){
+    public List<Student> getAllStudents(){
         return studentRepository.findAll();
     }
 }
