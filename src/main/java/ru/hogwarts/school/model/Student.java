@@ -7,7 +7,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "students")
 public class Student {
-   @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
