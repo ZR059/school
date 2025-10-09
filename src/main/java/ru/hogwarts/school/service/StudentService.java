@@ -39,10 +39,13 @@ public class StudentService {
     }
 
     public Student findStudent(long id) {
-        return studentRepository.findById(id).orElseThrow();
+        return studentRepository.findById(id).orElse(null);
     }
 
     public Student editStudent(Student student) {
+        if (!studentRepository.existsById(student.getId())) {
+            return null;
+        }
         return studentRepository.save(student);
     }
 
@@ -55,7 +58,7 @@ public class StudentService {
     }
 
     public Avatar findAvatar(long studentId) {
-        return avatarRepository.findByStudentId(studentId).orElseThrow();
+        return avatarRepository.findByStudentId(studentId).orElse(null);
     }
 
     public void uploadAvatar(Long studentId, MultipartFile file) throws IOException {

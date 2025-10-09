@@ -5,15 +5,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.web.servlet.MockMvc;
-import ru.hogwarts.school.controller.StudentController;
 import ru.hogwarts.school.model.Avatar;
 import ru.hogwarts.school.model.Student;
 import ru.hogwarts.school.service.StudentService;
 
-import java.util.Collections;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.*;
@@ -170,22 +171,56 @@ public class StudentControllerWebMvcTest {
     }
 
     @Test
-    public void downloadAvatarWithValidIdShouldReturnAvatarFile() throws Exception {
-        Avatar avatar = createTestAvatar();
-        when(studentService.findAvatar(STUDENT_ID)).thenReturn(avatar);
+    void downloadAvatarFullFileWithValidIdShouldReturnAvatarFile() throws Exception {
+        // Given
+        Long studentId = 1L;
 
-        mockMvc.perform(get("/student/{id}/avatar", STUDENT_ID))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.parseMediaType("image/jpeg")))
-                .andExpect(header().longValue("Content-Length", avatar.getFileSize()));
+        Path tempFile = Files.createTempFile("avatar", ".jpg");
+        byte[] testData = new byte[]{1, 2, 3, 4, 5};
+        Files.write(tempFile, testData);
+
+        try {
+            Avatar mockAvatar = new Avatar();
+            mockAvatar.setId(1L);
+            mockAvatar.setMediaType("image/jpeg");
+            mockAvatar.setFilePath(tempFile.toAbsolutePath().toString());
+            mockAvatar.setFileSize((long) testData.length);
+
+
+            when(studentService.findAvatar(studentId)).thenReturn(mockAvatar);
+
+            mockMvc.perform(get("/student/{id}/avatar", studentId))
+                    .andExpect(status().isOk())
+                    .andExpect(header().string(HttpHeaders.CONTENT_TYPE, "image/jpeg"))
+                    .andExpect(header().longValue(HttpHeaders.CONTENT_LENGTH, testData.length))
+                    .andExpect(content().bytes(testData));
+
+        } finally {
+            Files.deleteIfExists(tempFile);
+        }
     }
 
     @Test
-    public void downloadAvatarPreviewWhenAvatarNotExistsShouldReturnNotFound() throws Exception {
-        when(studentService.findAvatar(NON_EXISTENT_STUDENT_ID)).thenReturn(null);
+    void downloadAvatarPreviewWithValidIdShouldReturnAvatar() throws Exception {
+        // Given
+        Long studentId = 1L;
 
-        mockMvc.perform(get("/student/{id}/avatar/preview", NON_EXISTENT_STUDENT_ID))
-                .andExpect(status().isNotFound());
+        // Создаем mock аватара
+        Avatar mockAvatar = new Avatar();
+        mockAvatar.setId(1L);
+        mockAvatar.setMediaType("image/jpeg");
+        mockAvatar.setData(new byte[]{1, 2, 3, 4, 5});
+        mockAvatar.setFileSize(5L);
+
+        // Настраиваем моки
+        when(studentService.findAvatar(studentId)).thenReturn(mockAvatar);
+
+        // When & Then
+        mockMvc.perform(get("/student/{id}/avatar/preview", studentId))
+                .andExpect(status().isOk())
+                .andExpect(header().string(HttpHeaders.CONTENT_TYPE, "image/jpeg"))
+                .andExpect(header().longValue(HttpHeaders.CONTENT_LENGTH, 5))
+                .andExpect(content().bytes(new byte[]{1, 2, 3, 4, 5}));
     }
 
     @Test

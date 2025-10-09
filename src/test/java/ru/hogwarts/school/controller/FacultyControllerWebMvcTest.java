@@ -32,7 +32,6 @@ public class FacultyControllerWebMvcTest {
 
     @Test
     void shouldGetFacultyById() throws Exception {
-        // Тест для GET /faculty/{id}
         Faculty faculty = new Faculty();
         faculty.setId(1L);
         faculty.setName("Gryffindor");
@@ -47,7 +46,6 @@ public class FacultyControllerWebMvcTest {
 
     @Test
     void shouldCreateFaculty() throws Exception {
-        // Тест для POST /faculty
         Faculty faculty = new Faculty();
         faculty.setId(1L);
         faculty.setName("Slytherin");
@@ -64,7 +62,6 @@ public class FacultyControllerWebMvcTest {
 
     @Test
     void shouldEditFaculty() throws Exception {
-        // Тест для PUT /faculty
         Faculty faculty = new Faculty();
         faculty.setId(1L);
         faculty.setName("Hufflepuff");
@@ -81,14 +78,12 @@ public class FacultyControllerWebMvcTest {
 
     @Test
     void shouldDeleteFaculty() throws Exception {
-        // Тест для DELETE /faculty/{id}
         mockMvc.perform(MockMvcRequestBuilders.delete("/faculty/{id}", 1L))
                 .andExpect(status().isOk());
     }
 
     @Test
     void shouldGetFacultiesByColor() throws Exception {
-        // Тест для GET /faculty/color/{color}
         Faculty faculty = new Faculty();
         faculty.setId(1L);
         faculty.setName("Test Faculty");
@@ -103,7 +98,6 @@ public class FacultyControllerWebMvcTest {
 
     @Test
     void shouldFindFacultiesByNameOrColor() throws Exception {
-        // Тест для GET /faculty/search с использованием param
         Faculty faculty = new Faculty();
         faculty.setId(1L);
         faculty.setName("Gryffindor");
@@ -119,7 +113,6 @@ public class FacultyControllerWebMvcTest {
 
     @Test
     void shouldGetAllFaculties() throws Exception {
-        // Тест для GET /faculty
         Faculty faculty = new Faculty();
         faculty.setId(1L);
         faculty.setName("Test Faculty");
@@ -134,7 +127,6 @@ public class FacultyControllerWebMvcTest {
 
     @Test
     void shouldGetFacultyStudents() throws Exception {
-        // Тест для GET /faculty/{id}/students
         Student student = new Student();
         student.setId(1L);
         student.setName("Harry Potter");

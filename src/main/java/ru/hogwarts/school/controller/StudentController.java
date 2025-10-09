@@ -47,8 +47,8 @@ public class StudentController {
     }
 
     @GetMapping
-    public ResponseEntity<Collection<Student>> findStudents(@RequestParam(required = false) int age) {
-        if (age > 0) {
+    public ResponseEntity<Collection<Student>> findStudents(@RequestParam(required = false) Integer age) {
+        if (age != null && age > 0) {
             return ResponseEntity.ok(studentService.findByAge(age));
         }
         return ResponseEntity.ok(Collections.emptyList());
@@ -89,6 +89,10 @@ public class StudentController {
     public ResponseEntity<byte[]> downloadAvatar(@PathVariable Long id) {
         Avatar avatar = studentService.findAvatar(id);
 
+        if (avatar == null) {
+            return ResponseEntity.notFound().build();
+        }
+
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.parseMediaType(avatar.getMediaType()));
         headers.setContentLength(avatar.getData().length);
@@ -97,8 +101,12 @@ public class StudentController {
     }
 
     @GetMapping(value = "/{id}/avatar")
-    public void downloadAvatar(@PathVariable Long id, HttpServletResponse response) throws IOException {
+    public ResponseEntity<Object> downloadAvatar(@PathVariable Long id, HttpServletResponse response) throws IOException {
         Avatar avatar = studentService.findAvatar(id);
+
+        if (avatar == null) {
+            return ResponseEntity.notFound().build();
+        }
 
         Path path = Path.of(avatar.getFilePath());
 
@@ -109,5 +117,6 @@ public class StudentController {
             response.setContentLength((int) avatar.getFileSize());
             is.transferTo(os);
         }
+        return null;
     }
 }
