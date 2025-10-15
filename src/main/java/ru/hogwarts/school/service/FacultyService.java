@@ -20,10 +20,18 @@ public class FacultyService {
     }
 
     public Faculty findFaculty(Long id) {
-        return facultyRepository.findById(id).get();
+        // ИСПРАВЛЕНО: Добавляем проверку existsById
+        if (id == null || !facultyRepository.existsById(id)) {
+            return null;
+        }
+        return facultyRepository.findById(id).orElse(null);
     }
 
     public Faculty editFaculty(Faculty faculty) {
+        // ИСПРАВЛЕНО: Проверяем существование перед сохранением
+        if (faculty.getId() == null || !facultyRepository.existsById(faculty.getId())) {
+            return null;
+        }
         return facultyRepository.save(faculty);
     }
 
@@ -48,4 +56,3 @@ public class FacultyService {
         return faculty.map(Faculty::getStudents).orElse(List.of());
     }
 }
-
