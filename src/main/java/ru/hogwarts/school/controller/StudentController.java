@@ -7,6 +7,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpHeaders;
@@ -25,6 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import ru.hogwarts.school.model.Avatar;
 import ru.hogwarts.school.model.Student;
+import ru.hogwarts.school.service.AvatarService;
 import ru.hogwarts.school.service.StudentService;
 
 @RestController
@@ -32,9 +35,11 @@ import ru.hogwarts.school.service.StudentService;
 public class StudentController {
 
     private final StudentService studentService;
+    private final AvatarService avatarService;
 
-    public StudentController(StudentService studentService) {
+    public StudentController(StudentService studentService, AvatarService avatarService) {
         this.studentService = studentService;
+        this.avatarService = avatarService;
     }
 
     @GetMapping("{id}")
@@ -87,36 +92,51 @@ public class StudentController {
 
     @GetMapping(value = "/{id}/avatar/preview")
     public ResponseEntity<byte[]> downloadAvatar(@PathVariable Long id) {
-        Avatar avatar = studentService.findAvatar(id);
+        Optional<Avatar> avatar = avatarService.findAvatarByStudentId(id);
 
-        if (avatar == null) {
+        if (avatar.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
 
         HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.parseMediaType(avatar.getMediaType()));
-        headers.setContentLength(avatar.getData().length);
+        headers.setContentType(MediaType.parseMediaType(avatar.get().getMediaType()));
+        headers.setContentLength(avatar.get().getData().length);
 
-        return ResponseEntity.status(HttpStatus.OK).headers(headers).body(avatar.getData());
+        return ResponseEntity.status(HttpStatus.OK).headers(headers).body(avatar.get().getData());
     }
 
     @GetMapping(value = "/{id}/avatar")
-    public ResponseEntity<Object> downloadAvatar(@PathVariable Long id, HttpServletResponse response) throws IOException {
-        Avatar avatar = studentService.findAvatar(id);
+    public void downloadAvatar(@PathVariable Long id, HttpServletResponse response) throws IOException {
+        Optional<Avatar> avatar = avatarService.findAvatarByStudentId(id);
 
-        if (avatar == null) {
-            return ResponseEntity.notFound().build();
+        if (avatar.isEmpty()) {
+            response.setStatus(404);
+            return;
         }
 
-        Path path = Path.of(avatar.getFilePath());
+        Path path = Path.of(avatar.get().getFilePath());
 
         try (InputStream is = Files.newInputStream(path);
-             OutputStream os = response.getOutputStream();) {
+             OutputStream os = response.getOutputStream()) {
             response.setStatus(200);
-            response.setContentType(avatar.getMediaType());
-            response.setContentLength((int) avatar.getFileSize());
-            is.transferTo(os);
+            response.setContentType(avatar.get().getMediaType());
+            response.setContentLength((int) avatar.get().getFileSize());
+            is.transferTo(os) ;
         }
-        return null;
+    }
+
+    @GetMapping("/count")
+    public Integer getTotalCountOfStudents() {
+        return studentService.getTotalCountOfStudents();
+    }
+
+    @GetMapping("/average-age")
+    public Double getAverageAgeOfStudents() {
+        return studentService.getAverageAgeOfStudents();
+    }
+
+    @GetMapping("/last-five")
+    public List<Student> getLastFiveStudents() {
+        return studentService.getLastFiveStudents();
     }
 }
