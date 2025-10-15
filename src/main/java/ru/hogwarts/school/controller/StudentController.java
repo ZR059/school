@@ -121,7 +121,7 @@ public class StudentController {
             response.setStatus(200);
             response.setContentType(avatar.get().getMediaType());
             response.setContentLength((int) avatar.get().getFileSize());
-            is.transferTo(os);
+            is.transferTo(os) ;
         }
     }
 
