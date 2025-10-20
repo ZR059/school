@@ -10,6 +10,7 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -71,7 +72,7 @@ public class StudentService {
         try (InputStream is = file.getInputStream();
              OutputStream os = Files.newOutputStream(filePath, CREATE_NEW);
              BufferedInputStream bis = new BufferedInputStream(is, 1024);
-             BufferedOutputStream bos = new BufferedOutputStream(os, 1024);
+             BufferedOutputStream bos = new BufferedOutputStream(os, 1024)
         ) {
             bis.transferTo(bos);
         }
@@ -88,5 +89,17 @@ public class StudentService {
 
     private String getExtension(String fileName) {
         return fileName.substring(fileName.lastIndexOf(".") + 1);
+    }
+
+    public Integer getTotalCountOfStudents(){
+        return studentRepository.getTotalCountOfStudents();
+    }
+
+    public Double getAverageAgeOfStudents(){
+        return studentRepository.getAverageAgeOfStudents();
+    }
+
+    public List<Student> getLastFiveStudents(){
+        return studentRepository.findLastFiveStudents();
     }
 }
