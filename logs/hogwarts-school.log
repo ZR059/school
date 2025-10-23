@@ -1,0 +1,409 @@
+2025-10-23T22:27:37.825+05:00  INFO 10904 --- [hogwarts-school] [main] ru.hogwarts.school.SchoolApplication     : Starting SchoolApplication using Java 17.0.14 with PID 10904 (D:\Spring Boot\school\target\classes started by USER in D:\Spring Boot\school)
+2025-10-23T22:27:37.829+05:00  INFO 10904 --- [hogwarts-school] [main] ru.hogwarts.school.SchoolApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-10-23T22:27:38.984+05:00  INFO 10904 --- [hogwarts-school] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-23T22:27:39.062+05:00  INFO 10904 --- [hogwarts-school] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 3 JPA repository interfaces.
+2025-10-23T22:27:39.707+05:00  INFO 10904 --- [hogwarts-school] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-23T22:27:39.725+05:00  INFO 10904 --- [hogwarts-school] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-23T22:27:39.726+05:00  INFO 10904 --- [hogwarts-school] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-10-23T22:27:39.809+05:00  INFO 10904 --- [hogwarts-school] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-23T22:27:39.809+05:00  INFO 10904 --- [hogwarts-school] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1876 ms
+2025-10-23T22:27:40.023+05:00  INFO 10904 --- [hogwarts-school] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-23T22:27:40.260+05:00  INFO 10904 --- [hogwarts-school] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-10-23T22:27:40.262+05:00  INFO 10904 --- [hogwarts-school] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-23T22:27:40.356+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.database                       : Set default schema name to PUBLIC
+2025-10-23T22:27:40.572+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.changelog                      : Reading resource: db/changelog/scripts/faculty-name-color-index.sql
+2025-10-23T22:27:40.644+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.changelog                      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2025-10-23T22:27:40.768+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2025-10-23T22:27:40.772+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.changelog                      : Reading resource: db/changelog/scripts/student-name-index.sql
+2025-10-23T22:27:40.785+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.snapshot                       : Creating snapshot
+2025-10-23T22:27:40.852+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.lockservice                    : Successfully acquired change log lock
+2025-10-23T22:27:40.853+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.command                        : Using deploymentId: 1240459994
+2025-10-23T22:27:40.854+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2025-10-23T22:27:40.893+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/faculty-name-color-index.sql::3::rzubairov
+2025-10-23T22:27:40.908+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:27:40.909+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/faculty-name-color-index.sql::3::rzubairov ran successfully in 14ms
+2025-10-23T22:27:40.917+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/faculty-name-color-index.sql::4::rzubairov
+2025-10-23T22:27:40.919+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:27:40.919+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/faculty-name-color-index.sql::4::rzubairov ran successfully in 2ms
+2025-10-23T22:27:40.921+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/student-name-index.sql::1::rzubairov
+2025-10-23T22:27:40.931+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:27:40.931+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/student-name-index.sql::1::rzubairov ran successfully in 10ms
+2025-10-23T22:27:40.934+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/student-name-index.sql::2::rzubairov
+2025-10-23T22:27:40.935+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:27:40.936+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/student-name-index.sql::2::rzubairov ran successfully in 1ms
+2025-10-23T22:27:40.942+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.util                           : UPDATE SUMMARY
+2025-10-23T22:27:40.944+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.util                           : Run:                          4
+2025-10-23T22:27:40.944+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.util                           : Previously run:               0
+2025-10-23T22:27:40.944+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.util                           : Filtered out:                 0
+2025-10-23T22:27:40.944+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.util                           : -------------------------------
+2025-10-23T22:27:40.944+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.util                           : Total change sets:            4
+2025-10-23T22:27:40.945+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.util                           : Update summary generated
+2025-10-23T22:27:40.948+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.command                        : Update command completed successfully.
+2025-10-23T22:27:40.948+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 4
+2025-10-23T22:27:40.949+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.lockservice                    : Successfully released change log lock
+2025-10-23T22:27:40.952+05:00  INFO 10904 --- [hogwarts-school] [main] liquibase.command                        : Command execution complete
+2025-10-23T22:27:42.611+05:00  INFO 10904 --- [hogwarts-school] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-23T22:27:42.743+05:00  INFO 10904 --- [hogwarts-school] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.18.Final
+2025-10-23T22:27:42.808+05:00  INFO 10904 --- [hogwarts-school] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-23T22:27:43.325+05:00  INFO 10904 --- [hogwarts-school] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-23T22:27:43.412+05:00  WARN 10904 --- [hogwarts-school] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-23T22:27:43.438+05:00  INFO 10904 --- [hogwarts-school] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-23T22:27:44.804+05:00  INFO 10904 --- [hogwarts-school] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-23T22:27:44.853+05:00  INFO 10904 --- [hogwarts-school] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-23T22:27:45.366+05:00  INFO 10904 --- [hogwarts-school] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-23T22:27:46.127+05:00  INFO 10904 --- [hogwarts-school] [main] r.h.school.service.StudentService        : StudentService initialized with avatars directory: null
+2025-10-23T22:27:46.257+05:00  WARN 10904 --- [hogwarts-school] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-23T22:27:46.326+05:00  INFO 10904 --- [hogwarts-school] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-10-23T22:27:46.752+05:00  INFO 10904 --- [hogwarts-school] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-10-23T22:27:46.857+05:00  INFO 10904 --- [hogwarts-school] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-23T22:27:46.872+05:00  INFO 10904 --- [hogwarts-school] [main] ru.hogwarts.school.SchoolApplication     : Started SchoolApplication in 9.802 seconds (process running for 11.231)
+2025-10-23T22:29:26.101+05:00  INFO 10904 --- [hogwarts-school] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-23T22:29:26.101+05:00  INFO 10904 --- [hogwarts-school] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-23T22:29:26.105+05:00  INFO 10904 --- [hogwarts-school] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-10-23T22:29:27.242+05:00  INFO 10904 --- [hogwarts-school] [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 595 ms
+2025-10-23T22:30:05.753+05:00  INFO 10904 --- [hogwarts-school] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-23T22:30:05.974+05:00  INFO 10904 --- [hogwarts-school] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-23T22:30:05.980+05:00  INFO 10904 --- [hogwarts-school] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-23T22:30:05.989+05:00  INFO 10904 --- [hogwarts-school] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-23T22:30:05.993+05:00  INFO 10904 --- [hogwarts-school] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-23T22:30:38.376+05:00  INFO 17436 --- [hogwarts-school] [main] ru.hogwarts.school.SchoolApplication     : Starting SchoolApplication using Java 17.0.14 with PID 17436 (D:\Spring Boot\school\target\classes started by USER in D:\Spring Boot\school)
+2025-10-23T22:30:38.381+05:00  INFO 17436 --- [hogwarts-school] [main] ru.hogwarts.school.SchoolApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-10-23T22:30:39.397+05:00  INFO 17436 --- [hogwarts-school] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-23T22:30:39.495+05:00  INFO 17436 --- [hogwarts-school] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 3 JPA repository interfaces.
+2025-10-23T22:30:40.208+05:00  INFO 17436 --- [hogwarts-school] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-23T22:30:40.223+05:00  INFO 17436 --- [hogwarts-school] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-23T22:30:40.224+05:00  INFO 17436 --- [hogwarts-school] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-10-23T22:30:40.317+05:00  INFO 17436 --- [hogwarts-school] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-23T22:30:40.318+05:00  INFO 17436 --- [hogwarts-school] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1839 ms
+2025-10-23T22:30:40.539+05:00  INFO 17436 --- [hogwarts-school] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-23T22:30:40.786+05:00  INFO 17436 --- [hogwarts-school] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-10-23T22:30:40.789+05:00  INFO 17436 --- [hogwarts-school] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-23T22:30:40.882+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.database                       : Set default schema name to PUBLIC
+2025-10-23T22:30:41.108+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.changelog                      : Reading resource: db/changelog/scripts/faculty-name-color-index.sql
+2025-10-23T22:30:41.194+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.changelog                      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2025-10-23T22:30:41.336+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2025-10-23T22:30:41.343+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.changelog                      : Reading resource: db/changelog/scripts/student-name-index.sql
+2025-10-23T22:30:41.358+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.snapshot                       : Creating snapshot
+2025-10-23T22:30:41.427+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.lockservice                    : Successfully acquired change log lock
+2025-10-23T22:30:41.428+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.command                        : Using deploymentId: 1240640512
+2025-10-23T22:30:41.430+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2025-10-23T22:30:41.468+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/faculty-name-color-index.sql::3::rzubairov
+2025-10-23T22:30:41.485+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:30:41.486+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/faculty-name-color-index.sql::3::rzubairov ran successfully in 16ms
+2025-10-23T22:30:41.495+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/faculty-name-color-index.sql::4::rzubairov
+2025-10-23T22:30:41.498+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:30:41.498+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/faculty-name-color-index.sql::4::rzubairov ran successfully in 3ms
+2025-10-23T22:30:41.501+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/student-name-index.sql::1::rzubairov
+2025-10-23T22:30:41.514+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:30:41.515+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/student-name-index.sql::1::rzubairov ran successfully in 13ms
+2025-10-23T22:30:41.520+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/student-name-index.sql::2::rzubairov
+2025-10-23T22:30:41.522+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:30:41.522+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/student-name-index.sql::2::rzubairov ran successfully in 2ms
+2025-10-23T22:30:41.533+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.util                           : UPDATE SUMMARY
+2025-10-23T22:30:41.533+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.util                           : Run:                          4
+2025-10-23T22:30:41.533+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.util                           : Previously run:               0
+2025-10-23T22:30:41.533+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.util                           : Filtered out:                 0
+2025-10-23T22:30:41.534+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.util                           : -------------------------------
+2025-10-23T22:30:41.534+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.util                           : Total change sets:            4
+2025-10-23T22:30:41.535+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.util                           : Update summary generated
+2025-10-23T22:30:41.539+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.command                        : Update command completed successfully.
+2025-10-23T22:30:41.540+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 4
+2025-10-23T22:30:41.544+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.lockservice                    : Successfully released change log lock
+2025-10-23T22:30:41.545+05:00  INFO 17436 --- [hogwarts-school] [main] liquibase.command                        : Command execution complete
+2025-10-23T22:30:43.005+05:00  INFO 17436 --- [hogwarts-school] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-23T22:30:43.094+05:00  INFO 17436 --- [hogwarts-school] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.18.Final
+2025-10-23T22:30:43.156+05:00  INFO 17436 --- [hogwarts-school] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-23T22:30:43.596+05:00  INFO 17436 --- [hogwarts-school] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-23T22:30:43.671+05:00  WARN 17436 --- [hogwarts-school] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-23T22:30:43.700+05:00  INFO 17436 --- [hogwarts-school] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-23T22:30:44.980+05:00  INFO 17436 --- [hogwarts-school] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-23T22:30:45.024+05:00  INFO 17436 --- [hogwarts-school] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-23T22:30:45.446+05:00  INFO 17436 --- [hogwarts-school] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-23T22:30:46.126+05:00  WARN 17436 --- [hogwarts-school] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'infoController' defined in file [D:\Spring Boot\school\target\classes\ru\hogwarts\school\controller\InfoController.class]: Unexpected exception during bean creation
+2025-10-23T22:30:46.127+05:00  INFO 17436 --- [hogwarts-school] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-23T22:30:46.133+05:00  INFO 17436 --- [hogwarts-school] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-23T22:30:46.136+05:00  INFO 17436 --- [hogwarts-school] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-23T22:30:46.140+05:00  INFO 17436 --- [hogwarts-school] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-23T22:30:46.153+05:00  INFO 17436 --- [hogwarts-school] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-23T22:30:46.179+05:00 ERROR 17436 --- [hogwarts-school] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'infoController' defined in file [D:\Spring Boot\school\target\classes\ru\hogwarts\school\controller\InfoController.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.3.jar:3.5.3]
+	at ru.hogwarts.school.SchoolApplication.main(SchoolApplication.java:12) ~[classes/:na]
+Caused by: org.springframework.util.PlaceholderResolutionException: Could not resolve placeholder 'server.port' in value "${server.port}"
+	at org.springframework.util.PlaceholderResolutionException.withValue(PlaceholderResolutionException.java:81) ~[spring-core-6.2.8.jar:6.2.8]
+	at org.springframework.util.PlaceholderParser$ParsedValue.resolve(PlaceholderParser.java:423) ~[spring-core-6.2.8.jar:6.2.8]
+	at org.springframework.util.PlaceholderParser.replacePlaceholders(PlaceholderParser.java:128) ~[spring-core-6.2.8.jar:6.2.8]
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:118) ~[spring-core-6.2.8.jar:6.2.8]
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:114) ~[spring-core-6.2.8.jar:6.2.8]
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:293) ~[spring-core-6.2.8.jar:6.2.8]
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:264) ~[spring-core-6.2.8.jar:6.2.8]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:186) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:971) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1650) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	... 16 common frames omitted
+
+2025-10-23T22:37:43.019+05:00  INFO 5884 --- [hogwarts-school] [main] ru.hogwarts.school.SchoolApplication     : Starting SchoolApplication using Java 17.0.14 with PID 5884 (D:\Spring Boot\school\target\classes started by USER in D:\Spring Boot\school)
+2025-10-23T22:37:43.023+05:00  INFO 5884 --- [hogwarts-school] [main] ru.hogwarts.school.SchoolApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-10-23T22:37:44.016+05:00  INFO 5884 --- [hogwarts-school] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-23T22:37:44.109+05:00  INFO 5884 --- [hogwarts-school] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 3 JPA repository interfaces.
+2025-10-23T22:37:44.832+05:00  INFO 5884 --- [hogwarts-school] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-23T22:37:44.848+05:00  INFO 5884 --- [hogwarts-school] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-23T22:37:44.849+05:00  INFO 5884 --- [hogwarts-school] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-10-23T22:37:44.936+05:00  INFO 5884 --- [hogwarts-school] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-23T22:37:44.936+05:00  INFO 5884 --- [hogwarts-school] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1822 ms
+2025-10-23T22:37:45.153+05:00  INFO 5884 --- [hogwarts-school] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-23T22:37:45.404+05:00  INFO 5884 --- [hogwarts-school] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-10-23T22:37:45.408+05:00  INFO 5884 --- [hogwarts-school] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-23T22:37:45.527+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.database                       : Set default schema name to PUBLIC
+2025-10-23T22:37:45.767+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.changelog                      : Reading resource: db/changelog/scripts/faculty-name-color-index.sql
+2025-10-23T22:37:45.845+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.changelog                      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2025-10-23T22:37:45.974+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2025-10-23T22:37:45.981+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.changelog                      : Reading resource: db/changelog/scripts/student-name-index.sql
+2025-10-23T22:37:45.994+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.snapshot                       : Creating snapshot
+2025-10-23T22:37:46.061+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.lockservice                    : Successfully acquired change log lock
+2025-10-23T22:37:46.062+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.command                        : Using deploymentId: 1241065122
+2025-10-23T22:37:46.064+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2025-10-23T22:37:46.101+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/faculty-name-color-index.sql::3::rzubairov
+2025-10-23T22:37:46.117+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:37:46.119+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/faculty-name-color-index.sql::3::rzubairov ran successfully in 16ms
+2025-10-23T22:37:46.127+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/faculty-name-color-index.sql::4::rzubairov
+2025-10-23T22:37:46.131+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:37:46.132+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/faculty-name-color-index.sql::4::rzubairov ran successfully in 4ms
+2025-10-23T22:37:46.134+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/student-name-index.sql::1::rzubairov
+2025-10-23T22:37:46.146+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:37:46.147+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/student-name-index.sql::1::rzubairov ran successfully in 11ms
+2025-10-23T22:37:46.150+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/student-name-index.sql::2::rzubairov
+2025-10-23T22:37:46.152+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:37:46.152+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/student-name-index.sql::2::rzubairov ran successfully in 2ms
+2025-10-23T22:37:46.163+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.util                           : UPDATE SUMMARY
+2025-10-23T22:37:46.163+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.util                           : Run:                          4
+2025-10-23T22:37:46.163+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.util                           : Previously run:               0
+2025-10-23T22:37:46.163+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.util                           : Filtered out:                 0
+2025-10-23T22:37:46.163+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.util                           : -------------------------------
+2025-10-23T22:37:46.163+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.util                           : Total change sets:            4
+2025-10-23T22:37:46.164+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.util                           : Update summary generated
+2025-10-23T22:37:46.168+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.command                        : Update command completed successfully.
+2025-10-23T22:37:46.168+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 4
+2025-10-23T22:37:46.171+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.lockservice                    : Successfully released change log lock
+2025-10-23T22:37:46.173+05:00  INFO 5884 --- [hogwarts-school] [main] liquibase.command                        : Command execution complete
+2025-10-23T22:37:47.684+05:00  INFO 5884 --- [hogwarts-school] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-23T22:37:47.763+05:00  INFO 5884 --- [hogwarts-school] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.18.Final
+2025-10-23T22:37:47.808+05:00  INFO 5884 --- [hogwarts-school] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-23T22:37:48.207+05:00  INFO 5884 --- [hogwarts-school] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-23T22:37:48.281+05:00  WARN 5884 --- [hogwarts-school] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-23T22:37:48.305+05:00  INFO 5884 --- [hogwarts-school] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-23T22:37:49.643+05:00  INFO 5884 --- [hogwarts-school] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-23T22:37:49.687+05:00  INFO 5884 --- [hogwarts-school] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-23T22:37:50.074+05:00  INFO 5884 --- [hogwarts-school] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-23T22:37:50.704+05:00  INFO 5884 --- [hogwarts-school] [main] r.h.school.controller.InfoController     : InfoController initialized for application: hogwarts-school on port: 8080
+2025-10-23T22:37:50.706+05:00  INFO 5884 --- [hogwarts-school] [main] r.h.school.service.StudentService        : StudentService initialized with avatars directory: null
+2025-10-23T22:37:50.829+05:00  WARN 5884 --- [hogwarts-school] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-23T22:37:50.889+05:00  INFO 5884 --- [hogwarts-school] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-10-23T22:37:51.299+05:00  INFO 5884 --- [hogwarts-school] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-10-23T22:37:51.401+05:00  INFO 5884 --- [hogwarts-school] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-23T22:37:51.417+05:00  INFO 5884 --- [hogwarts-school] [main] ru.hogwarts.school.SchoolApplication     : Started SchoolApplication in 9.087 seconds (process running for 9.581)
+2025-10-23T22:38:53.266+05:00  INFO 5884 --- [hogwarts-school] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-23T22:38:53.502+05:00  INFO 5884 --- [hogwarts-school] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-23T22:38:53.507+05:00  INFO 5884 --- [hogwarts-school] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-23T22:38:53.517+05:00  INFO 5884 --- [hogwarts-school] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-23T22:38:53.520+05:00  INFO 5884 --- [hogwarts-school] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-23T22:38:55.975+05:00  INFO 8892 --- [hogwarts-school] [main] ru.hogwarts.school.SchoolApplication     : Starting SchoolApplication using Java 17.0.14 with PID 8892 (D:\Spring Boot\school\target\classes started by USER in D:\Spring Boot\school)
+2025-10-23T22:38:55.978+05:00 DEBUG 8892 --- [hogwarts-school] [main] ru.hogwarts.school.SchoolApplication     : Running with Spring Boot v3.5.3, Spring v6.2.8
+2025-10-23T22:38:55.979+05:00  INFO 8892 --- [hogwarts-school] [main] ru.hogwarts.school.SchoolApplication     : The following 1 profile is active: "dev"
+2025-10-23T22:38:57.039+05:00  INFO 8892 --- [hogwarts-school] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-23T22:38:57.122+05:00  INFO 8892 --- [hogwarts-school] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 3 JPA repository interfaces.
+2025-10-23T22:38:57.819+05:00  INFO 8892 --- [hogwarts-school] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-23T22:38:57.835+05:00  INFO 8892 --- [hogwarts-school] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-23T22:38:57.835+05:00  INFO 8892 --- [hogwarts-school] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-10-23T22:38:57.922+05:00  INFO 8892 --- [hogwarts-school] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-23T22:38:57.922+05:00  INFO 8892 --- [hogwarts-school] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1851 ms
+2025-10-23T22:38:58.137+05:00  INFO 8892 --- [hogwarts-school] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-23T22:38:58.379+05:00  INFO 8892 --- [hogwarts-school] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-10-23T22:38:58.381+05:00  INFO 8892 --- [hogwarts-school] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-23T22:38:58.501+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.database                       : Set default schema name to PUBLIC
+2025-10-23T22:38:58.741+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.changelog                      : Reading resource: db/changelog/scripts/faculty-name-color-index.sql
+2025-10-23T22:38:58.825+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.changelog                      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2025-10-23T22:38:58.973+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2025-10-23T22:38:58.979+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.changelog                      : Reading resource: db/changelog/scripts/student-name-index.sql
+2025-10-23T22:38:58.993+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.snapshot                       : Creating snapshot
+2025-10-23T22:38:59.068+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.lockservice                    : Successfully acquired change log lock
+2025-10-23T22:38:59.069+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.command                        : Using deploymentId: 1241138108
+2025-10-23T22:38:59.071+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2025-10-23T22:38:59.109+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/faculty-name-color-index.sql::3::rzubairov
+2025-10-23T22:38:59.126+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:38:59.127+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/faculty-name-color-index.sql::3::rzubairov ran successfully in 16ms
+2025-10-23T22:38:59.138+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/faculty-name-color-index.sql::4::rzubairov
+2025-10-23T22:38:59.141+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:38:59.142+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/faculty-name-color-index.sql::4::rzubairov ran successfully in 4ms
+2025-10-23T22:38:59.145+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/student-name-index.sql::1::rzubairov
+2025-10-23T22:38:59.155+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:38:59.156+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/student-name-index.sql::1::rzubairov ran successfully in 11ms
+2025-10-23T22:38:59.160+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/student-name-index.sql::2::rzubairov
+2025-10-23T22:38:59.162+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:38:59.162+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/student-name-index.sql::2::rzubairov ran successfully in 2ms
+2025-10-23T22:38:59.170+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.util                           : UPDATE SUMMARY
+2025-10-23T22:38:59.170+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.util                           : Run:                          4
+2025-10-23T22:38:59.170+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.util                           : Previously run:               0
+2025-10-23T22:38:59.171+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.util                           : Filtered out:                 0
+2025-10-23T22:38:59.171+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.util                           : -------------------------------
+2025-10-23T22:38:59.171+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.util                           : Total change sets:            4
+2025-10-23T22:38:59.172+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.util                           : Update summary generated
+2025-10-23T22:38:59.176+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.command                        : Update command completed successfully.
+2025-10-23T22:38:59.177+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 4
+2025-10-23T22:38:59.179+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.lockservice                    : Successfully released change log lock
+2025-10-23T22:38:59.181+05:00  INFO 8892 --- [hogwarts-school] [main] liquibase.command                        : Command execution complete
+2025-10-23T22:39:00.608+05:00  INFO 8892 --- [hogwarts-school] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-23T22:39:00.694+05:00  INFO 8892 --- [hogwarts-school] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.18.Final
+2025-10-23T22:39:00.746+05:00  INFO 8892 --- [hogwarts-school] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-23T22:39:01.178+05:00  INFO 8892 --- [hogwarts-school] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-23T22:39:01.248+05:00  WARN 8892 --- [hogwarts-school] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-23T22:39:01.271+05:00  INFO 8892 --- [hogwarts-school] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-23T22:39:02.500+05:00  INFO 8892 --- [hogwarts-school] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-23T22:39:02.542+05:00  INFO 8892 --- [hogwarts-school] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-23T22:39:02.942+05:00  INFO 8892 --- [hogwarts-school] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-23T22:39:03.735+05:00  INFO 8892 --- [hogwarts-school] [main] r.h.school.controller.InfoController     : InfoController initialized for application: hogwarts-school on port: 8080
+2025-10-23T22:39:03.737+05:00  INFO 8892 --- [hogwarts-school] [main] r.h.school.service.StudentService        : StudentService initialized with avatars directory: null
+2025-10-23T22:39:03.842+05:00  WARN 8892 --- [hogwarts-school] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-23T22:39:03.896+05:00  INFO 8892 --- [hogwarts-school] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-10-23T22:39:04.288+05:00  INFO 8892 --- [hogwarts-school] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-10-23T22:39:04.395+05:00  INFO 8892 --- [hogwarts-school] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-23T22:39:04.411+05:00  INFO 8892 --- [hogwarts-school] [main] ru.hogwarts.school.SchoolApplication     : Started SchoolApplication in 9.107 seconds (process running for 9.614)
+2025-10-23T22:40:44.170+05:00  INFO 8892 --- [hogwarts-school] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-23T22:40:44.418+05:00  INFO 8892 --- [hogwarts-school] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-23T22:40:44.425+05:00  INFO 8892 --- [hogwarts-school] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-23T22:40:44.434+05:00  INFO 8892 --- [hogwarts-school] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-23T22:40:44.437+05:00  INFO 8892 --- [hogwarts-school] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-23T22:41:01.020+05:00  INFO 10460 --- [hogwarts-school] [main] ru.hogwarts.school.SchoolApplication     : Starting SchoolApplication using Java 17.0.14 with PID 10460 (D:\Spring Boot\school\target\classes started by USER in D:\Spring Boot\school)
+2025-10-23T22:41:01.024+05:00 DEBUG 10460 --- [hogwarts-school] [main] ru.hogwarts.school.SchoolApplication     : Running with Spring Boot v3.5.3, Spring v6.2.8
+2025-10-23T22:41:01.025+05:00  INFO 10460 --- [hogwarts-school] [main] ru.hogwarts.school.SchoolApplication     : The following 1 profile is active: "dev"
+2025-10-23T22:41:02.043+05:00  INFO 10460 --- [hogwarts-school] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-23T22:41:02.128+05:00  INFO 10460 --- [hogwarts-school] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 3 JPA repository interfaces.
+2025-10-23T22:41:02.815+05:00  INFO 10460 --- [hogwarts-school] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-23T22:41:02.830+05:00  INFO 10460 --- [hogwarts-school] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-23T22:41:02.830+05:00  INFO 10460 --- [hogwarts-school] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-10-23T22:41:02.912+05:00  INFO 10460 --- [hogwarts-school] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-23T22:41:02.912+05:00  INFO 10460 --- [hogwarts-school] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1803 ms
+2025-10-23T22:41:03.132+05:00  INFO 10460 --- [hogwarts-school] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-23T22:41:03.371+05:00  INFO 10460 --- [hogwarts-school] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-10-23T22:41:03.374+05:00  INFO 10460 --- [hogwarts-school] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-23T22:41:03.493+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.database                       : Set default schema name to PUBLIC
+2025-10-23T22:41:03.731+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.changelog                      : Reading resource: db/changelog/scripts/faculty-name-color-index.sql
+2025-10-23T22:41:03.808+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.changelog                      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2025-10-23T22:41:03.956+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2025-10-23T22:41:03.962+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.changelog                      : Reading resource: db/changelog/scripts/student-name-index.sql
+2025-10-23T22:41:03.975+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.snapshot                       : Creating snapshot
+2025-10-23T22:41:04.049+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.lockservice                    : Successfully acquired change log lock
+2025-10-23T22:41:04.050+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.command                        : Using deploymentId: 1241263104
+2025-10-23T22:41:04.052+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2025-10-23T22:41:04.089+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/faculty-name-color-index.sql::3::rzubairov
+2025-10-23T22:41:04.104+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:41:04.106+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/faculty-name-color-index.sql::3::rzubairov ran successfully in 16ms
+2025-10-23T22:41:04.115+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/faculty-name-color-index.sql::4::rzubairov
+2025-10-23T22:41:04.119+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:41:04.119+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/faculty-name-color-index.sql::4::rzubairov ran successfully in 4ms
+2025-10-23T22:41:04.122+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/student-name-index.sql::1::rzubairov
+2025-10-23T22:41:04.134+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:41:04.134+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/student-name-index.sql::1::rzubairov ran successfully in 11ms
+2025-10-23T22:41:04.137+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.ui                             : Running Changeset: db/changelog/scripts/student-name-index.sql::2::rzubairov
+2025-10-23T22:41:04.141+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.changelog                      : Custom SQL executed
+2025-10-23T22:41:04.141+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.changelog                      : ChangeSet db/changelog/scripts/student-name-index.sql::2::rzubairov ran successfully in 4ms
+2025-10-23T22:41:04.151+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.util                           : UPDATE SUMMARY
+2025-10-23T22:41:04.152+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.util                           : Run:                          4
+2025-10-23T22:41:04.152+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.util                           : Previously run:               0
+2025-10-23T22:41:04.152+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.util                           : Filtered out:                 0
+2025-10-23T22:41:04.152+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.util                           : -------------------------------
+2025-10-23T22:41:04.152+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.util                           : Total change sets:            4
+2025-10-23T22:41:04.154+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.util                           : Update summary generated
+2025-10-23T22:41:04.158+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.command                        : Update command completed successfully.
+2025-10-23T22:41:04.158+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 4
+2025-10-23T22:41:04.161+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.lockservice                    : Successfully released change log lock
+2025-10-23T22:41:04.163+05:00  INFO 10460 --- [hogwarts-school] [main] liquibase.command                        : Command execution complete
+2025-10-23T22:41:05.729+05:00  INFO 10460 --- [hogwarts-school] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-23T22:41:05.819+05:00  INFO 10460 --- [hogwarts-school] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.18.Final
+2025-10-23T22:41:05.867+05:00  INFO 10460 --- [hogwarts-school] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-23T22:41:06.292+05:00  INFO 10460 --- [hogwarts-school] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-23T22:41:06.364+05:00  WARN 10460 --- [hogwarts-school] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-23T22:41:06.387+05:00  INFO 10460 --- [hogwarts-school] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-23T22:41:07.673+05:00  INFO 10460 --- [hogwarts-school] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-23T22:41:07.719+05:00  INFO 10460 --- [hogwarts-school] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-23T22:41:08.121+05:00  INFO 10460 --- [hogwarts-school] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-23T22:41:08.832+05:00  INFO 10460 --- [hogwarts-school] [main] r.h.school.controller.InfoController     : InfoController initialized for application: hogwarts-school on port: 8080
+2025-10-23T22:41:08.834+05:00  INFO 10460 --- [hogwarts-school] [main] r.h.school.service.StudentService        : StudentService initialized with avatars directory: null
+2025-10-23T22:41:08.950+05:00  WARN 10460 --- [hogwarts-school] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-23T22:41:09.004+05:00  INFO 10460 --- [hogwarts-school] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-10-23T22:41:09.404+05:00  INFO 10460 --- [hogwarts-school] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-10-23T22:41:09.509+05:00  INFO 10460 --- [hogwarts-school] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-23T22:41:09.527+05:00  INFO 10460 --- [hogwarts-school] [main] ru.hogwarts.school.SchoolApplication     : Started SchoolApplication in 9.294 seconds (process running for 9.851)
+2025-10-23T22:41:54.305+05:00  INFO 10460 --- [hogwarts-school] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-23T22:41:54.306+05:00  INFO 10460 --- [hogwarts-school] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-23T22:41:54.308+05:00  INFO 10460 --- [hogwarts-school] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-10-23T22:41:55.324+05:00  INFO 10460 --- [hogwarts-school] [http-nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 587 ms
+2025-10-23T22:42:03.827+05:00  INFO 10460 --- [hogwarts-school] [http-nio-8080-exec-5] r.h.school.controller.InfoController     : Was invoked method for get server port
+2025-10-23T22:42:03.827+05:00 DEBUG 10460 --- [hogwarts-school] [http-nio-8080-exec-5] r.h.school.controller.InfoController     : Application: hogwarts-school, Port: 8080
+2025-10-23T22:42:03.827+05:00 DEBUG 10460 --- [hogwarts-school] [http-nio-8080-exec-5] r.h.school.controller.InfoController     : Response: Application 'hogwarts-school' is running on port: 8080
+2025-10-23T22:44:12.584+05:00  INFO 10460 --- [hogwarts-school] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-23T22:44:12.823+05:00  INFO 10460 --- [hogwarts-school] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-23T22:44:12.827+05:00  INFO 10460 --- [hogwarts-school] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-23T22:44:12.834+05:00  INFO 10460 --- [hogwarts-school] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-23T22:44:12.836+05:00  INFO 10460 --- [hogwarts-school] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
