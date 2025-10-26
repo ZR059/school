@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Optional;
 
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -33,6 +35,8 @@ import ru.hogwarts.school.service.StudentService;
 @RestController
 @RequestMapping("/student")
 public class StudentController {
+
+    private static final Logger logger = LoggerFactory.getLogger(StudentController.class);
 
     private final StudentService studentService;
     private final AvatarService avatarService;
@@ -121,7 +125,7 @@ public class StudentController {
             response.setStatus(200);
             response.setContentType(avatar.get().getMediaType());
             response.setContentLength((int) avatar.get().getFileSize());
-            is.transferTo(os) ;
+            is.transferTo(os);
         }
     }
 
@@ -130,13 +134,32 @@ public class StudentController {
         return studentService.getTotalCountOfStudents();
     }
 
-    @GetMapping("/average-age")
-    public Double getAverageAgeOfStudents() {
-        return studentService.getAverageAgeOfStudents();
-    }
-
     @GetMapping("/last-five")
     public List<Student> getLastFiveStudents() {
         return studentService.getLastFiveStudents();
+    }
+
+    @GetMapping("/names-starting-with-a")
+    public List<String> getStudentNamesStartingWithA() {
+        logger.info("Was invoked GET method for get student names starting with A");
+        return studentService.getStudentNamesStartingWithASorted();
+    }
+
+    @GetMapping("/average-age")
+    public Double getAverageAge() {
+        logger.info("Was invoked GET method for get average age");
+        return studentService.getAverageAgeOfAllStudents();
+    }
+
+    @GetMapping("/sum-optimized")
+    public Integer getSumOptimized() {
+        logger.info("Was invoked GET method for get optimized sum");
+        return studentService.calculateSumOptimized();
+    }
+
+    @GetMapping("/sum-slow")
+    public Integer getSumSlow() {
+        logger.info("Was invoked GET method for get slow sum");
+        return studentService.calculateSumSlow();
     }
 }
