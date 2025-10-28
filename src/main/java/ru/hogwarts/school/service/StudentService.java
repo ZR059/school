@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.slf4j.Logger;
@@ -272,5 +273,94 @@ public class StudentService {
         logger.debug("Slow sum calculation took {} ms, result: {}", (endTime - startTime), sum);
 
         return sum;
+    }
+
+    public void printStudentsParallel() {
+        logger.info("Was invoked method for print students in parallel mode");
+
+        List<Student> students = studentRepository.findAll();
+
+        if (students.size() < 6) {
+            logger.warn("Not enough students for parallel printing. Required: 6, available: {}", students.size());
+            return;
+        }
+
+        System.out.println("Main Thread: " + students.get(0).getName());
+        System.out.println("Main Thread: " + students.get(1).getName());
+
+        Thread thread1 = new Thread(() -> {
+            System.out.println("Thread-1: " + students.get(2).getName());
+            System.out.println("Thread-1: " + students.get(3).getName());
+        });
+
+        Thread thread2 = new Thread(() -> {
+            System.out.println("Thread-2: " + students.get(4).getName());
+            System.out.println("Thread-2: " + students.get(5).getName());
+        });
+
+        thread1.start();
+        thread2.start();
+
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            logger.error("Thread was interrupted", e);
+            Thread.currentThread().interrupt();
+        }
+
+        logger.debug("Parallel printing completed");
+    }
+
+    private final Object lock = new Object();
+
+    public void printStudentsSynchronized() {
+        logger.info("Was invoked method for print students in synchronized mode");
+
+        List<Student> students = studentRepository.findAll();
+
+        if (students.size() < 6) {
+            logger.warn("Not enough students for synchronized printing. Required: 6, available: {}", students.size());
+            return;
+        }
+
+        printStudentNameSynchronized(students.get(0).getName(), "Main Thread");
+        printStudentNameSynchronized(students.get(1).getName(), "Main Thread");
+
+        Thread thread1 = new Thread(() -> {
+            printStudentNameSynchronized(students.get(2).getName(), "Sync-Thread-1");
+            printStudentNameSynchronized(students.get(3).getName(), "Sync-Thread-1");
+        });
+
+        Thread thread2 = new Thread(() -> {
+            printStudentNameSynchronized(students.get(4).getName(), "Sync-Thread-2");
+            printStudentNameSynchronized(students.get(5).getName(), "Sync-Thread-2");
+        });
+
+        thread1.start();
+        thread2.start();
+
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            logger.error("Thread was interrupted", e);
+            Thread.currentThread().interrupt();
+        }
+
+        logger.debug("Synchronized printing completed");
+    }
+
+    private void printStudentNameSynchronized(String studentName, String threadName) {
+        synchronized (lock) {
+            System.out.println(threadName + ": " + studentName);
+        }
+    }
+
+    public List<Student> getFirstSixStudents() {
+        List<Student> students = studentRepository.findAll();
+        return students.stream()
+                .limit(6)
+                .collect(Collectors.toList());
     }
 }

@@ -162,4 +162,22 @@ public class StudentController {
         logger.info("Was invoked GET method for get slow sum");
         return studentService.calculateSumSlow();
     }
+
+    @GetMapping("/print-parallel")
+    public void printStudentsParallel() {
+        logger.info("Was invoked GET method for print students in parallel");
+        studentService.printStudentsParallel();
+    }
+
+    @GetMapping("/print-synchronized")
+    public void printStudentsSynchronized() {
+        logger.info("Was invoked GET method for print students in synchronized mode");
+        studentService.printStudentsSynchronized();
+    }
+
+    @GetMapping("/first-six")
+    public List<Student> getFirstSixStudents() {
+        logger.info("Was invoked GET method for get first six students");
+        return studentService.getFirstSixStudents();
+    }
 }
