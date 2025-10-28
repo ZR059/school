@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Stream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -214,5 +215,62 @@ public class StudentService {
         }
 
         return students;
+    }
+
+    public List<String> getStudentNamesStartingWithASorted() {
+        logger.info("Was invoked method for get student names starting with A");
+
+        List<String> result = studentRepository.findAll().stream()
+                .map(Student::getName)
+                .map(String::toUpperCase)
+                .filter(upperCase -> upperCase.startsWith("A"))
+                .sorted()
+                .toList();
+
+        logger.debug("Found {} students with names starting with A", result.size());
+        return result;
+    }
+
+    public Double getAverageAgeOfAllStudents() {
+        logger.info("Was invoked method for get average age of all students");
+
+        Double averageAge = studentRepository.findAll().stream()
+                .mapToInt(Student::getAge)
+                .average()
+                .orElse(0.0);
+
+        logger.debug("Calculated average age: {}", averageAge);
+        return averageAge;
+    }
+
+    public Integer calculateSumOptimized() {
+        logger.info("Was invoked method for calculate optimized sum");
+
+        long startTime = System.currentTimeMillis();
+
+        int sum = Stream.iterate(1, a -> a + 1)
+                .limit(1_000_000)
+                .parallel()
+                .reduce(0, Integer::sum);
+
+        long endTime = System.currentTimeMillis();
+        logger.debug("Optimized sum calculation took {} ms, result: {}", (endTime - startTime), sum);
+
+        return sum;
+    }
+
+    public Integer calculateSumSlow() {
+        logger.info("Was invoked method for calculate slow sum");
+
+        long startTime = System.currentTimeMillis();
+
+        int sum = Stream.iterate(1, a -> a + 1)
+                .limit(1_000_000)
+                .reduce(0, (a, b) -> a + b);
+
+        long endTime = System.currentTimeMillis();
+        logger.debug("Slow sum calculation took {} ms, result: {}", (endTime - startTime), sum);
+
+        return sum;
     }
 }

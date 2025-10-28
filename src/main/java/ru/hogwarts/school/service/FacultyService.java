@@ -1,5 +1,7 @@
 package ru.hogwarts.school.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import ru.hogwarts.school.model.Faculty;
 import ru.hogwarts.school.model.Student;
@@ -9,6 +11,9 @@ import java.util.*;
 
 @Service
 public class FacultyService {
+
+    private static final Logger logger = LoggerFactory.getLogger(FacultyService.class);
+
     private final FacultyRepository facultyRepository;
 
     public FacultyService(FacultyRepository facultyRepository) {
@@ -20,7 +25,6 @@ public class FacultyService {
     }
 
     public Faculty findFaculty(Long id) {
-        // ИСПРАВЛЕНО: Добавляем проверку existsById
         if (id == null || !facultyRepository.existsById(id)) {
             return null;
         }
@@ -28,7 +32,6 @@ public class FacultyService {
     }
 
     public Faculty editFaculty(Faculty faculty) {
-        // ИСПРАВЛЕНО: Проверяем существование перед сохранением
         if (faculty.getId() == null || !facultyRepository.existsById(faculty.getId())) {
             return null;
         }
@@ -54,5 +57,17 @@ public class FacultyService {
     public List<Student> getFacultyStudents(Long facultyId) {
         Optional<Faculty> faculty = facultyRepository.findById(facultyId);
         return faculty.map(Faculty::getStudents).orElse(List.of());
+    }
+
+    public String getLongestFacultyName() {
+        logger.info("Was invoked method for get longest faculty name");
+
+        String longestName = facultyRepository.findAll().stream()
+                .map(Faculty::getName)
+                .max(Comparator.comparingInt(String::length))
+                .orElse("");
+
+        logger.debug("Longest faculty name: {} (length: {})", longestName, longestName.length());
+        return longestName;
     }
 }
